@@ -47,13 +47,13 @@ with col3:
 
 # 3. Tampilkan Grafik Scatter Plot seperti di Colab
 st.subheader("📈 Visualisasi Cluster Gaji")
-fig, ax = plt.subplots(figsize=(10, 5))
+fig, ax = plt.subplots(figsize=(7, 4))
 sns.scatterplot(x=df.index, y=df['Gaji_Rata2'], hue=df['Cluster'], palette='viridis', s=50, alpha=0.8, ax=ax)
 plt.title('Visualisasi Cluster Gaji (Berdasarkan Indeks Data)')
 plt.xlabel('Indeks Pekerjaan')
 plt.ylabel('Gaji (Rp)')
 plt.grid(True, linestyle='--', alpha=0.6)
-st.pyplot(fig)
+st.pyplot(fig, use_container_width=False)
 
 # 4. FITUR INTERAKTIF: Prediksi Gaji Baru (Ini yang bikin dosen suka!)
 st.sidebar.header("🔮 Fitur Prediksi Cluster")
