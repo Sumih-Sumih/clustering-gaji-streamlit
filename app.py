@@ -66,7 +66,15 @@ if st.sidebar.button("Prediksi Cluster"):
     # Prediksi menggunakan model K-Means
     hasil_cluster = kmeans.predict(gaji_scaled)[0]
     
-    st.sidebar.success(f"Gaji Rp {input_gaji:,.0f} masuk ke dalam **Cluster {hasil_cluster}**")
+    # Pemetaan nomor cluster sesuai hasil data colab Anda
+    if hasil_cluster == 2:
+        kategori = "Cluster 2 (Distribusi Gaji Rendah)"
+    elif hasil_cluster == 0:
+        kategori = "Cluster 0 (Distribusi Gaji Menengah)"
+    else:
+        kategori = "Cluster 1 (Distribusi Gaji Tinggi)"
+        
+    st.sidebar.success(f"Gaji Rp {input_gaji:,.0f} diklasifikasikan ke dalam: **{kategori}**")
 
 # 5. Tampilkan Tabel Data
 st.subheader("🔍 Telusuri Data Berdasarkan Cluster")
