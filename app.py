@@ -9,9 +9,11 @@ import pickle
 st.set_page_config(page_title="Project Data Mining - Clustering Gaji", layout="wide")
 
 st.title("📊 Analisis Segmentasi Distribusi Gaji Pekerjaan di Indonesia Menggunakan Algoritma K-Means")
-st.write("Sistem ini dirancang untuk mengidentifikasi pola distribusi pendapatan dan segmentasi karakteristik 
+st.write("""
+Sistem ini dirancang untuk mengidentifikasi pola distribusi pendapatan dan segmentasi karakteristik 
 pekerjaan di Indonesia secara objektif melalui pendekatan berbasis data (*data-driven*). 
-Pengelompokan dilakukan berdasarkan kemiripan nilai rata-rata gaji untuk memetakan variasi tingkat pendapatan.")
+Pengelompokan dilakukan berdasarkan kemiripan nilai rata-rata gaji untuk memetakan variasi tingkat pendapatan.
+""")
 
 # 1. Load Data dan Model Pickle
 @st.cache_resource
