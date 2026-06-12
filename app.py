@@ -8,8 +8,10 @@ import pickle
 # Konfigurasi halaman utama
 st.set_page_config(page_title="Project Data Mining - Clustering Gaji", layout="wide")
 
-st.title("📊 Aplikasi Clustering Profesi & Gaji Rata-Rata")
-st.write("Aplikasi ini menampilkan hasil clustering lowongan kerja menggunakan model K-Means yang telah dilatih di Google Colab.")
+st.title("📊 Analisis Segmentasi Distribusi Gaji Pekerjaan di Indonesia Menggunakan Algoritma K-Means")
+st.write("Sistem ini dirancang untuk mengidentifikasi pola distribusi pendapatan dan segmentasi karakteristik 
+pekerjaan di Indonesia secara objektif melalui pendekatan berbasis data (*data-driven*). 
+Pengelompokan dilakukan berdasarkan kemiripan nilai rata-rata gaji untuk memetakan variasi tingkat pendapatan.")
 
 # 1. Load Data dan Model Pickle
 @st.cache_resource
@@ -35,7 +37,7 @@ except FileNotFoundError:
 # 2. Tampilkan Statistik Ringkas Data
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.metric("Total Data Lowongan", len(df))
+    st.metric("Total Sampel Pekerjaan", f"{len(df):,}")
 with col2:
     st.metric("Gaji Tertinggi", f"Rp {df['Gaji_Rata2'].max():,.0f}")
 with col3:
